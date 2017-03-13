@@ -1,0 +1,65 @@
+site_name: eZ Platform Test Documentation
+repo_url: https://github.com/DominikaK/
+copyright: "Copyright 1999-2016 eZ Systems AS and others"
+pages:
+    - 'Doc main page': 'index.md'
+    - Guide to eZ Platform:
+        - 'section1/Alter-the-JavaScript-Application-routing.md'
+        - 'section1/An-Introduction-to-Extending-eZ-Platform.md'
+        - 'section1/API-Reference.md'
+        - 'section1/API.md'
+        - 'section1/Asset-Management.md'
+        - 'section1/Authenticating-a-user-with-multiple-user-providers.md'
+        - 'section1/Author-Field-Type.md'
+        - 'section1/Avoiding-Problems.md'
+        - 'section1/Best-Practices.md'
+        - 'section1/BinaryField-Field-Type.md'
+        - 'section1/BlockingLimitation.md'
+        - 'section1/Build-the-bundle.md'
+        - 'section1/Build-the-content-list.md'
+        - 'section1/Building-a-Bicycle-Route-Tracker-in-eZ-Platform.md'
+        - 'section1/Bundles.md'
+        - 'section1/Checkbox-Field-Type.md'
+        - 'section1/Clustering.md'
+        - 'section1/Coming-to-eZ-Platform-from-eZ-Publish-Platform.md'
+        - 'section1/Community-Resources.md'
+        - 'section1/Composer-for-Frontend-Developers.md'
+        - 'section1/Composer-for-System-Administrators.md'
+        - 'section1/Conclusion.md'
+        - 'section1/Configure-the-navigation.md'
+        - 'section1/Content-Rendering.md'
+        - 'section1/ContentTypeLimitation.md'
+        - 'section1/Contribute-to-Documentation.md'
+        - 'section1/Converting-request-parameters-into-API-objects.md'
+        - 'section1/Cookbook.md'
+        - 'section1/Country-Field-Type.md'
+        - 'section1/Create-the-bundle.md'
+        - 'section1/Create-the-extension-Bundle.md'
+        - 'section1/Creating-a-Tweet-Field-Type.md'
+        - 'section1/Creating-custom-notifications-for-Flex-Workflow.md'
+        - 'section1/Date-Field-Type.md'
+        - 'section1/DateAndTime-Field-Type.md'
+        - 'section1/Define-a-View.md'
+        - 'section1/Design.md'
+        - 'section1/Development-guidelines.md'
+        - 'section1/Devops.md'
+        - 'section1/Displaying-children-of-a-Content-item.md'
+        - 'section1/Docker-Tools.md'
+        - 'section1/Documentation.md'
+        - 'section1/ElasticSearch-Bundle.md'
+        - Subsection:
+            - 'section1/EmailAddress-Field-Type.md'
+    - Cookbook:
+        - 'section2/Environments.md'
+        - 'section2/Error-handling.md'
+        - 'section2/Executing-long-running-console-commands.md'
+        - 'section2/Explore-eZ-Enterprise-Tutorials.md'
+        - 'section2/Exposing-SiteAccess-aware-configuration-for-your-bundle.md'
+        - 'section2/Extending-eZ-Platform.md'
+        - 'section2/Extending-PlatformUI-with-new-navigation.md'
+        - 'section2/Extending-the-REST-API.md'
+theme: readthedocs
+extra_css: [css/custom.css]
+markdown_extensions:
+    - markdown.extensions.admonition
+    - markdown.extensions.toc

@@ -1,0 +1,62 @@
+main {
+    background: #fff;
+}
+
+body {
+    margin-top: 5px;
+    padding-top: 15px;
+    border-top: 1px solid #dbdbdb;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    word-wrap: break-word;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 43px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 23px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 40px;
+    font-weight: 600;
+}
+
+ol,
+ul {
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 18px;
+    margin: 0 0 30px;
+}
+
+a {
+    color: #f15a22;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #da3c03;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #f15a22;
+}
+
+.wy-side-nav-search {
+    background-color: #F05A22;
+}
