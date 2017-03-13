@@ -1,0 +1,13 @@
+<div style="cursor: pointer">
+    <span data-toggle="rst-current-version">
+          <a href="{{ config.repo_url }}" class="icon icon-github"> GitHub</a>
+      {% if page %}
+      {% if page.previous_page %}
+        <span>{% if page %}<a href="{{ page.previous_page.url }}">Previous</a>{% endif %}</span>
+      {% endif %}
+      {% if page.next_page %}
+        <span style="margin-left: 15px">{% if page %}<a href="{{ page.next_page.url }}">Next</a>{% endif %}</span>
+      {% endif %}
+      {% endif %}
+    </span>
+</div>

@@ -58,7 +58,7 @@ pages:
         - 'section2/Extending-eZ-Platform.md'
         - 'section2/Extending-PlatformUI-with-new-navigation.md'
         - 'section2/Extending-the-REST-API.md'
-theme: readthedocs
+theme_dir: 'my_theme'
 extra_css: [css/custom.css]
 markdown_extensions:
     - markdown.extensions.admonition

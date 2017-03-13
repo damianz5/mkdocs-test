@@ -57,6 +57,14 @@ a:visited {
     color: #f15a22;
 }
 
-.wy-side-nav-search {
-    background-color: #F05A22;
+li {
+    list-style: none;
+}
+
+.level2 {
+    margin-left: -15px;
+}
+
+.current {
+    background-color: #e5e5e5;
 }

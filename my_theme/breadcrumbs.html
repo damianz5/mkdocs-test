@@ -1,0 +1,15 @@
+{% if page %}
+    {% for doc in page.ancestors %}
+        {% if doc.link %}
+            <span><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</span>
+        {% else %}
+            <span>{{ doc.title }} &raquo;</span>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% if page %}<span>{{ page.title }}</span>{% endif %}
+    <li>
+        {% if page and page.edit_url %}
+            <a href="{{ page.edit_url }}">Edit on Github</a>
+        {% endif %}
+    </li>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <script>var base_url = '{{ base_url }}';</script>
+    <script data-main="{{ base_url }}/mkdocs/js/search.js" src="{{ base_url }}/mkdocs/js/require.js"></script>
+    {% for path in extra_css %}
+        <link href="{{ path }}" rel="stylesheet">
+    {% endfor %}
+    <title>{% if page_title %}{{ page_title }} - {% endif %}{{ site_name }}</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="row col-xs-4">
+            {% include "side.html" %}
+        </aside>
+        <main class="row col-xs-8">
+            {% include "breadcrumbs.html" %}
+            {% if page %}
+                <h1>{{ page.title }}</h1>
+            {% endif %}
+            {{ content }}
+            {% include "versions.html" %}
+        </main>
+    </div>
+</body>
+</html>
