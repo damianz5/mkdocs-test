@@ -1,5 +1,5 @@
 site_name: eZ Platform Test Documentation
-repo_url: https://github.com/DominikaK/
+repo_url: https://github.com/DominikaK/mkdocs-test
 copyright: "Copyright 1999-2016 eZ Systems AS and others"
 pages:
     - 'Doc main page': 'index.md'
