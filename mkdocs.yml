@@ -1,5 +1,6 @@
 site_name: eZ Platform Test Documentation
 repo_url: https://github.com/DominikaK/mkdocs-test
+edit_uri: edit/master/docs/
 copyright: "Copyright 1999-2016 eZ Systems AS and others"
 pages:
     - 'Doc main page': 'index.md'
@@ -60,6 +61,7 @@ pages:
         - 'section2/Extending-the-REST-API.md'
 theme: readthedocs
 extra_css: [css/custom.css]
+extra_javascript: [js/extra.js]
 markdown_extensions:
     - markdown.extensions.admonition
     - markdown.extensions.toc
