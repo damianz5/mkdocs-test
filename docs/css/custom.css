@@ -1,16 +1,19 @@
-main {
-    background: #fff;
+@font-face {
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
     margin-top: 5px;
-    padding-top: 15px;
-    border-top: 1px solid #dbdbdb;
     font-size: 16px;
     line-height: 1.6;
     color: #000;
     word-wrap: break-word;
     font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+}
+
+.wy-nav-content-wrap, .wy-nav-content {
+    background-color: #fff;
 }
 
 h1 {
@@ -28,7 +31,11 @@ h3 {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
     margin-top: 40px;
     font-weight: 600;
 }
@@ -36,11 +43,6 @@ h4 {
 ol,
 ul {
     margin-bottom: 30px;
-}
-
-p {
-    font-size: 18px;
-    margin: 0 0 30px;
 }
 
 a {
@@ -57,6 +59,143 @@ a:visited {
     color: #f15a22;
 }
 
+code {
+    color: #3f3f3f;
+}
+
+/* Footer */
+footer {
+    padding-top: 2em;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #3f3f3f;
+    text-align: center;
+}
+
+/* Left column */
+.wy-nav-side, .wy-nav-top {
+    background-color: #3f3f3f;
+}
+
+/* Search box */
 .wy-side-nav-search {
-    background-color: #F05A22;
+    background-color: inherit;
+}
+
+.wy-side-nav-search > a:hover, .wy-nav-top a:hover {
+    color: inherit;
+    background-color: inherit;
+    text-decoration: none;
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #1f1f1f;
+}
+
+.wy-nav-content {
+    max-width: 70%;
+    margin-left: 10%;
+}
+
+.wy-nav-side {
+    width: 400px;
+}
+
+.rst-versions {
+    width: 400px !important;
+}
+
+/* Main table of contents */
+.wy-menu-vertical a,
+.wy-menu-vertical li ul li a {
+    color: #d8d8d8;
+}
+
+.wy-menu-vertical li.toctree-l1 > a, .wy-menu-vertical li.toctree-l1 > span.caption-text {
+    padding-left: 1em;
+}
+
+.wy-menu-vertical .subnav a,
+.wy-menu-vertical .subnav li.current > a  {
+    padding-left: 2em;
+}
+
+.wy-menu-vertical span.caption-text {
+    color: #8b8b8b;
+    font-variant: small-caps;
+    padding-left: 2em;
+}
+
+.wy-menu a:hover {
+    color: #ebebeb;
+}
+
+.wy-menu a:hover {
+    background-color: #525252;
+}
+
+/* Do not duplicate page title in table of contents */
+li.current > ul > li:first-of-type {
+    display:none;
+}
+
+
+/* Remove first heading from TOC in the sidebar */
+/* TO FIX! */
+/* li[class^=toctree]:first-child {
+    display: none;
+} */
+
+
+/* Override main table of contents blue on active link */
+.wy-menu-vertical a:active {
+    background-color: #1f1f1f;
+}
+
+/* Next, Previous, Edit on Github button */
+.btn-neutral {
+    box-shadow: none;
+    background-color: #3f3f3f !important;
+    color: #fff !important;
+}
+
+.btn-neutral:hover {
+    background-color: #1f1f1f !important;
+    text-decoration: none;
+}
+
+.wy-breadcrumbs li a:not(.wy-breadcrumbs-aside) {
+	display:inline-block;
+	padding:5px}
+
+/* Replace RTD logo with eZ logo upper-left */
+.logo:before {
+	content: url(../img/ez-logo.png);
+    padding-right: 5px;
+}
+
+/* Version link in RST badge */
+.rst-versions .rst-current-version {
+    color: #f15a22 !important;
+}
+
+/* Images and caption in-page */
+figure {
+    display: table;
+}
+
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    background: #4c4c4c;
+    font-size: 12px;
+    color: #b3b3b3;
+    padding: 10px;
+}
+
+/* In-page TOC */
+.toc a {
+    font-size: 0.9em;
 }
