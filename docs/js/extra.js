@@ -46,3 +46,14 @@
     observer.observe(target, config);
   });
 }());
+
+
+/* Display caption when image has title attribute. Based on http://jsfiddle.net/8kWCd/1/ */
+$(document).ready(function() {
+    $('img').each(function() {
+        if ($(this).attr('title')) {
+            $(this).wrap( "<figure></figure>" );
+            $(this).after( "<figcaption>" + $(this).attr('title') + "</figcaption>" );
+        }
+    });
+});
