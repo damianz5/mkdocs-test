@@ -244,6 +244,7 @@ pages:
         - 'Migrating from eZ Publish': 'migrating/migration-from-ez-publish.md'
     - Releases:
         - 'releases/releases.md'
+        - 'eZ Platform v1.9.0 release notes': 'releases/ez-platform-v1.9.0.md'
         - 'releases/ez-platform-v1.8.0.md'
         - 'releases/ez-platform-v1.7.0-lts.md'
         - 'releases/ez-platform-and-ez-enterprise-v1.6.0.md'

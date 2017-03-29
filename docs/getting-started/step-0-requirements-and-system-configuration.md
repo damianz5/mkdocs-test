@@ -4,6 +4,10 @@
 
 If you're using a PaaS provider such as our partner [Platform.sh](https://platform.sh/hosting/php/ez/), where we have an single-server setup, and in the future also clustered setup, you can [skip](https://doc.ez.no/pages/viewpage.action?pageId=31429552) this step.
 
+!!! caution "Let's say something changes in v1.9"
+
+    Something that is only here when we switch to v1.9.
+
 # Server
 
 eZ software is built to rely on existing technologies and standards. The minimal setup is `PHP`,  `MySQL/MariaDB`, and `Apache/Nginx`. Recommendation for production setups is to use `Varnish`, and  `Memcached`, `NFS` `and ``Solr` in a [clustered setup](Clustering_31430387.html).
