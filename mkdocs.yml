@@ -4,7 +4,7 @@ copyright: "Copyright 1999-2017 eZ Systems AS and others"
 site_favicon: img/favicon.ico
 pages:
     - 'Documentation': 'index.md'
-    - Getting started with eZ Platform:
+    - 'Getting started with eZ Platform':
         - 'Get started with eZ Platform': 'getting-started/get-started-with-ez-platform.md'
         - 'Step 0&#58 Requirements and system configuration': 'getting-started/step-0-requirements-and-system-configuration.md'
         - Step 1 - Installation:
@@ -37,6 +37,7 @@ pages:
                 - 'Get started with eZ Enterprise': 'getting-started/get-started-with-ez-enterprise.md'
                 - 'eZ Enterprise features': 'getting-started/ez-enterprise-features.md'
     - Tutorials:
+        - Tutorials: 'tutorials/tutorials.md'
         - Building a bicycle route tracker in eZ Platform:
             - 'Building a bicycle route tracker in eZ Platform': 'tutorials/building-a-bicycle-route-tracker-in-ez-platform.md'
             - 'Part 1&#58 Setting up eZ Platform': 'tutorials/part-1-setting-up-ez-platform.md'
@@ -275,8 +276,8 @@ pages:
 
 theme: readthedocs
 theme_dir: templates
-extra_css: [css/custom.css]
-extra_javascript: [js/extra.js]
+extra_css: [css/custom.css, css/font-awesome.min.css]
+extra_javascript: [js/scrollspy.js, js/extra.js]
 markdown_extensions:
     - markdown.extensions.admonition
     - markdown.extensions.toc:

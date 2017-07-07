@@ -13,7 +13,7 @@
 
   {# CSS #}
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ base_url }}/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="{{ base_url }}/css/theme_extra.css" type="text/css" />
@@ -45,7 +45,6 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', '{{ google_analytics[0] }}', '{{ google_analytics[1] }}');
       ga('send', 'pageview');
   </script>
@@ -59,16 +58,19 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="{{ homepage_url }}" class="logo"> {{ site_name }}</a>
+        <a href="{{ homepage_url }}" class="icon icon-home"> {{ site_name }}</a>
         {% include "searchbox.html" %}
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
         <ul class="current">
           {% set navlevel = 1 %}
           {% for nav_item in nav %}
-          <li class="toctree-l{{ navlevel }}{% if nav_item.active and not nav_item.children %} current{%endif%}">
-              {% include 'nav.html' %}
+
+              {#<li class="toctree-l{{ navlevel }}{% if nav_item.active and not nav_item.children %} current{%endif%}">#}
+              <li class="toctree-l{{ navlevel }}{% if nav_item.active %} current{%endif%}">
+            {% include 'nav.html' %}
           </li>
           {% endfor %}
         </ul>
@@ -88,12 +90,15 @@
       <div class="wy-nav-content">
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
-          <div role="main">
+          <div role="main" id="content" {# data-spy="scroll" data-target=".wy-menu-vertical .current ul.subnav li.current" #}>
             <div class="section">
               {% block content %}
                 {{ content }}
               {% endblock %}
             </div>
+
+
+
           </div>
 	  {%- block footer %}
           {% include "footer.html" %}

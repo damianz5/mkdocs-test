@@ -1,53 +1,3 @@
-/*
-* "Borrowed" from https://github.com/oxyc/drupal-vm/blob/9d9e1b6dfd3734d46ab6660a7ee50beb2a2bdf7b/docs/js/fix_search.js
-*/
-
-(function (){
-  var MutationObserver = (function () {
-    var prefixes = ['WebKit', 'Moz', 'O', 'Ms', '']
-    for (var i=0; i < prefixes.length; i++) {
-      if (prefixes[i] + 'MutationObserver' in window) {
-        return window[prefixes[i] + 'MutationObserver'];
-      }
-    }
-    return false;
-  }());
-
-  /*
-  * RTD messes up MkDocs' search feature by tinkering with the search box defined in the theme, see
-  * https://github.com/rtfd/readthedocs.org/issues/1088. This function sets up a DOM4 MutationObserver
-  * to react to changes to the search form (triggered by RTD on doc ready). It then reverts everything
-  * the RTD JS code modified.
-  *
-  * @see https://github.com/rtfd/readthedocs.org/issues/1088#issuecomment-224715045
-  */
-  $(document).ready(function () {
-    if (!MutationObserver) {
-      return;
-    }
-    var target = document.getElementById('rtd-search-form');
-    var config = {attributes: true, childList: true};
-
-    var observer = new MutationObserver(function(mutations) {
-      // if it isn't disconnected it'll loop infinitely because the observed element is modified
-      observer.disconnect();
-      var form = $('#rtd-search-form');
-      var path = window.location.pathname;
-      var branch = path.split('/')[2];
-      form.empty();
-      form.attr('action', window.location.origin + '/en/' + branch + '/search.html');
-      $('<input>').attr({
-        type: "text",
-        name: "q",
-        placeholder: "Search docs"
-      }).appendTo(form);
-    });
-
-    observer.observe(target, config);
-  });
-}());
-
-
 /* Display caption when image has title attribute. Based on http://jsfiddle.net/8kWCd/1/ */
 $(document).ready(function() {
     $('img').each(function() {
@@ -55,5 +5,61 @@ $(document).ready(function() {
             $(this).wrap( "<figure></figure>" );
             $(this).after( "<figcaption>" + $(this).attr('title') + "</figcaption>" );
         }
+    });
+});
+
+$(document).ready(function() {
+    var self = $(this);
+
+    var toggleCurrent = function (elem) {
+        var parent_li = elem.closest('li');
+
+        parent_li.siblings('li.current').removeClass('current');
+        parent_li.siblings().find('li.current').removeClass('current');
+        parent_li.find('> ul li.current').removeClass('current');
+        parent_li.toggleClass('current');
+    };
+
+    // Set up javascript UX bits
+    $(document)
+    // Shift nav in mobile when clicking the menu.
+        .on('click', "[data-toggle='wy-nav-top']", function() {
+            $("[data-toggle='wy-nav-shift']").toggleClass("shift");
+            $("[data-toggle='rst-versions']").toggleClass("shift");
+        })
+
+        // Nav menu link click operations
+        .on('click', ".wy-menu-vertical .current ul li a", function() {
+            var target = $(this);
+            // Close menu when you click a link.
+            $("[data-toggle='wy-nav-shift']").removeClass("shift");
+            $("[data-toggle='rst-versions']").toggleClass("shift");
+            // Handle dynamic display of l3 and l4 nav lists
+            //toggleCurrent(target);
+        })
+        .on('click', "[data-toggle='rst-current-version']", function() {
+            $("[data-toggle='rst-versions']").toggleClass("shift-up");
+        })
+    ;
+
+    // Add expand links to all parents of nested ul
+    $('.wy-menu-vertical ul').not('.simple').each(function () {
+        if ($(this).children('li').length > 1) {
+            $(this).siblings('a').each(function () {
+                var link = $(this),
+                    expand = $('<span class="toctree-expand"></span>');
+                expand.on('click', function (ev) {
+                    toggleCurrent(link);
+                    ev.stopPropagation();
+                    return false;
+                });
+
+                link.before(expand);
+            });
+        }
+    });
+
+    $('body').scrollspy({
+        target: '.wy-menu-vertical .current .current .current'
     });
 });

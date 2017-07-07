@@ -113,8 +113,27 @@ footer {
     color: #d8d8d8;
 }
 
-.wy-menu-vertical li.toctree-l1 > a, .wy-menu-vertical li.toctree-l1 > span.caption-text {
-    padding-left: 1em;
+.wy-menu-vertical li ul {
+    margin-bottom: 0;
+    display: none;
+}
+
+.wy-menu-vertical li.current a {
+    padding: 0.4045em 2.427em 0.4045em 2.4em;
+    margin-left: 30px;
+}
+
+.wy-menu-vertical li.toctree-l1 > a,
+.wy-menu-vertical li.toctree-l1 > span.caption-text {
+    padding: 0.4045em 2.427em 0.4045em 2em;
+    padding-left: 0;
+    margin-left: 2.5em;
+    line-height: 2em;
+    /* padding-left: 1em; */
+}
+
+.wy-menu-vertical li.toctree-l1 {
+    clear:both;
 }
 
 .wy-menu-vertical .subnav a,
@@ -122,10 +141,14 @@ footer {
     padding-left: 2em;
 }
 
+.wy-menu-vertical span {
+    padding: 0 4px 0 6px;
+}
+
 .wy-menu-vertical span.caption-text {
     color: #8b8b8b;
     font-variant: small-caps;
-    padding-left: 2em;
+    padding: 0.4045em 2.427em 0.4045em 0em;
 }
 
 .wy-menu a:hover {
@@ -138,7 +161,7 @@ footer {
 
 /* Do not duplicate page title in table of contents */
 li.current > ul > li:first-of-type {
-    display:none;
+    display: none;
 }
 
 /* Override main table of contents blue on active link */
@@ -153,6 +176,10 @@ li.current > ul > li:first-of-type {
     color: #fff !important;
 }
 
+.btn-neutral:visited {
+    color: #fff !important;
+}
+
 .btn-neutral:hover {
     background-color: #1f1f1f !important;
     text-decoration: none;
@@ -160,10 +187,11 @@ li.current > ul > li:first-of-type {
 
 .wy-breadcrumbs li a:not(.wy-breadcrumbs-aside) {
 	display:inline-block;
-	padding:5px}
+	padding:5px;
+}
 
 /* Replace RTD logo with eZ logo upper-left */
-.logo:before {
+.icon-home:before {
 	content: url(../img/ez-logo.png);
     padding-right: 5px;
 }
@@ -190,4 +218,54 @@ figcaption {
 /* In-page TOC */
 .toc a {
     font-size: 0.9em;
+}
+
+.wy-menu-vertical li.current ul {
+    display: block;
+    padding-left: 1.8em;
+}
+
+.wy-menu-vertical li.current a {
+    padding: 0.4045em 2.427em 0.4045em 0.5em;
+}
+
+.wy-menu-vertical li.current .active a {
+    color: #f15a22;
+}
+
+.wy-menu-vertical li span:before {
+    -webkit-font-smoothing: antialiased;
+    font-family: "FontAwesome";
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: inherit;
+}
+
+/* plus sign */
+.wy-menu-vertical li span.toctree-expand:before {
+    content: "\f196";
+}
+
+/* minus sign */
+.wy-menu-vertical li.current span.toctree-expand:before {
+    content: "\f147";
+}
+
+/* plus sign */
+.wy-menu-vertical li.current li:not(.current) span.toctree-expand:before {
+    content: "\f196";
+}
+
+.wy-menu-vertical li span.toctree-expand {
+    display: block;
+    float: left;
+    margin-left: 0.5em;
+    font-size: 0.9em;
+    line-height: 2.8em;
+}
+
+ul.subnav li:not(.current) ul.subnav {
+    display: none;
 }
